@@ -61,7 +61,7 @@ describe('MatTree', () => {
 
         getNodes(treeElement).forEach(node => {
           expect(node.getAttribute('role')).toBe('treeitem');
-          expect(node.getAttribute('aria-level')).toBe('0');
+          expect(node.getAttribute('aria-level')).toBe('1');
         });
       });
 
