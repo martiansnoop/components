@@ -103,9 +103,10 @@ describe('CdkTree', () => {
       it('with the right accessibility roles', () => {
         expect(treeElement.getAttribute('role')).toBe('tree');
 
-        expect(getNodes(treeElement).every(node => {
-          return node.getAttribute('role') === 'treeitem';
-        })).toBe(true);
+        getNodes(treeElement).forEach(node => {
+          expect(node.getAttribute('role')).toBe('treeitem');
+          expect(node.getAttribute('aria-level')).toBe('1');
+        });
       });
 
       it('with the right data', () => {
